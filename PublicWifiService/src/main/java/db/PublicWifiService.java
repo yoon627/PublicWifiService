@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class PublicWifiService {
-	//와이파이 초기 설정
+	//와이파이 초기 등록
 	public int init() {
 		
         String dbURL = "jdbc:sqlite://C:\\Users\\user\\Desktop\\ZerobaseStudy\\DB\\sqlite-tools-win-x64-3460000/publicWifiInfo.db";
@@ -254,68 +254,6 @@ public class PublicWifiService {
         return endNum;
 	}
 	
-//	//와이파이 등록
-//	public void register(Wifi wifi) {
-//        String url = "jdbc:sqlite://C:\\Users\\user\\Desktop\\ZerobaseStudy\\DB\\sqlite-tools-win-x64-3460000/publicWifiInfo.db";
-//        
-//        Connection connection = null;
-//        PreparedStatement preparedStatement = null;
-//        
-//        try{
-//        	Class.forName("org.sqlite.JDBC");
-//            connection = DriverManager.getConnection(url);
-//            
-//            String sql = " insert into wifi (MGR_NO, WRDOFC, MAIN_NM, ADRES1, ADRES2, INSTL_FLOOR, INSTL_TY, INSTL_MBY, SVC_SE, CMCWR, CNSTC_YEAR, INOUT_DOOR, REMARS3, LAT, LNT, WORK_DTTM)" + 
-//            						" values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?); ";
-//            preparedStatement = connection.prepareStatement(sql);
-//            preparedStatement.setString(1, wifi.getMGR_NO());
-//            preparedStatement.setString(2, wifi.getWRDOFC());
-//            preparedStatement.setString(3, wifi.getMAIN_NM());
-//            preparedStatement.setString(4, wifi.getADRES1());
-//            preparedStatement.setString(5, wifi.getADRES2());
-//            preparedStatement.setString(6, wifi.getINSTL_FLOOR());
-//            preparedStatement.setString(7, wifi.getINSTL_TY());
-//            preparedStatement.setString(8, wifi.getINSTL_MBY());
-//            preparedStatement.setString(9, wifi.getSVC_SE());
-//            preparedStatement.setString(10, wifi.getCMCWR());
-//            preparedStatement.setInt(11, wifi.getCNSTC_YEAR());
-//            preparedStatement.setString(12, wifi.getINOUT_DOOR());
-//            preparedStatement.setString(13, wifi.getREMARS3());
-//            preparedStatement.setFloat(14, wifi.getLAT());
-//            preparedStatement.setFloat(15, wifi.getLNT());
-//            try {
-//                preparedStatement.setTimestamp(16, new java.sql.Timestamp(wifi.getWORK_DTTM().getTime()));
-//            }catch(Exception e) {
-//            	preparedStatement.setDate(16, null);
-//            }
-//            
-//            int affectedRows = preparedStatement.executeUpdate();
-//            if(affectedRows <= 0) {
-//            	System.out.println("저장 실패");
-//            }
-//            
-//        }catch(ClassNotFoundException|SQLException e){
-//            System.out.println(e.getMessage());
-//        }finally {
-//        	
-//        	try {
-//        		if(preparedStatement != null && !preparedStatement.isClosed()) {
-//        			preparedStatement.close();
-//        		}
-//        	}catch(SQLException e) {
-//        		System.out.println(e.getMessage());
-//        	}
-//        	
-//        	try {
-//            	if(connection != null && !connection.isClosed()) {
-//            		connection.close();
-//            	}
-//        		
-//        	}catch(SQLException e) {
-//        		System.out.println(e.getMessage());
-//        	}
-//        }
-//	}
 	
 	//거리순으로 20개 공공와이파이 가져오기
 	public ArrayList<Wifi> getList(float lat,float lnt){
