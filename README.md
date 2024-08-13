@@ -5,3 +5,6 @@
 북마크된 와이파이 정보를 담을 BookmarkWifi, 현재 위치를 불러올 때마다 기록을 남겨둘 LocationHistory을 java 파일로 생성해 주었습니다.
 
 PublicWifiService.java을 통해 서비스내 필요한 로직들(와이파이 저장, 북마크 관리, 등)을 제공합니다.
+
+
+https://github.com/user-attachments/assets/fdd98ef1-6562-405d-bede-f4b5281a7ea2
